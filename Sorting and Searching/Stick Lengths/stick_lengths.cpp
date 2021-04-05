@@ -7,19 +7,15 @@ using namespace std;
 
 #define cn(x) cout << #x << " = " << x << endl;
 
-ll diff(vector<ll> & v, ll obj){
-  ll ans = 0;
-  for(ll x : v) ans += abs(x-obj);
-  return ans;
-}
-
 ll stick_lengths(vector<ll> & v){
-  ll sum = 0;
-  for(ll x : v) sum += x;
-  long double prom = sum / (long double)n;
-  ll r = diff(v,floor(prom));
-  ll l = diff(v,ceil(prom));
-  return min(l,r);
+  int n = v.size();
+  sort(v.begin(), v.end());
+  ll median = v[n/2];
+  ll ans = 0;
+  for(ll x : v){
+    ans += abs(x-median);
+  }
+  return ans;
 }
 
 int main(){
