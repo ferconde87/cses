@@ -3,6 +3,7 @@
 using namespace std;
 
 int memo[1001][1001];
+const int mod = 1e9+7;
 
 // void grid_paths(vector<string> & matrix, int i, int j, int n){
 //   memo[i][j]++;
@@ -17,6 +18,7 @@ void grid_paths(vector<string> & matrix, int n){
     for(int j = 0; j < n; ++j){
       if(i > 0 && matrix[i-1][j] != '*') memo[i][j] += memo[i-1][j];
       if(j > 0 && matrix[i][j-1] != '*') memo[i][j] += memo[i][j-1];
+      memo[i][j] = memo[i][j] % mod;
     }
   }
 }
