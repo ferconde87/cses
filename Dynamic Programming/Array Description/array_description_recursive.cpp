@@ -17,7 +17,6 @@ void rec(vector<int> & v, int i, int last, int n, int m){
   } 
   if(i==0 && v[i]==0){
     for(int k = 1; k <= m; ++k){
-      // ans++;
       rec(v,i+1,k,n,m);
     }
     return;
