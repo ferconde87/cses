@@ -6,8 +6,10 @@ using namespace std;
 
 int main(){
   int n;
-  int a[n];
-  ll s;
+  cin >> n;
+  ll a[n];
+  ll s = 0;
   for(int i=0; i<n; ++i) cin >> a[i], s+=a[i];
-  cout << max(s, 2ll*a[i-1])
+  sort(a,a+n);
+  cout << max(s, 2ll*a[n-1]);
 }
