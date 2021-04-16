@@ -4,10 +4,6 @@ using namespace std;
 
 #define ar array
 
-//assuming info of the guests are in order
-
-
-
 int main(){
   int n;
   cin >> n;
