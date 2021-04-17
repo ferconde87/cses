@@ -9,17 +9,14 @@ tree_order_statistics_node_update> indexed_set;
 int main(){
   int n;
   cin >> n;
-  for(int i = 2; i <= n; i+=2) cout << i << " ";
-  int m = n/2;
-  m += (n % 2) ? 1 : 0;
   indexed_set s;
-  for(int i = 1, j = 0; j < m; i+=2, ++j) s.insert(i);
-  int i = (n % 2) ? -1 : 0;
-  while(m){
-    i = (i + 1) % m;
+  for(int i = 1; i <= n; ++i) s.insert(i);
+  int i = 0;
+  while(n){
+    i = (i + 1) % n;
     auto it = s.find_by_order(i);
     cout << *it  << " ";
     s.erase(it);
-    --m;
+    --n;
   }
 }
