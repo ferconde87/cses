@@ -3,28 +3,23 @@
 using namespace std;
 
 int ans = 0;
-void print(vector<int> & v){
-  for(int x : v) cout << x << " "; cout << endl;
-}
 
-void fa(vector<int> & index, int prev, int post, int i, int j){
+void fa(vector<int> & index, int prev, int post, int i, int j, int n){
   if(index[prev] < i && index[prev] > j) ans++;
   if(index[prev] > i && index[prev] < j) ans--;
-  if(index[post] > i && index[post] < j) ans++;
-  if(index[post] < i && index[post] > j) ans--;
-  // if(index[prev] == i) ans++;
+  if(post <= n && index[post] > i && index[post] < j) ans++;
+  if(post <= n && index[post] < i && index[post] > j) ans--;
+  
   if(index[prev] == j) ans--;
   if(index[post] == j) ans++;
-  // if(index[post] == i) ans--;
 }
 
-void fb(vector<int> & index, int prev, int post, int i, int j){
+void fb(vector<int> & index, int prev, int post, int i, int j, int n){
   if(index[prev] < j && index[prev] > i) ans++;
   if(index[prev] > j && index[prev] < i) ans--;
-  if(index[post] > j && index[post] < i) ans++;
-  if(index[post] < j && index[post] > i) ans--;
+  if(post <= n && index[post] > j && index[post] < i) ans++;
+  if(post <= n && index[post] < j && index[post] > i) ans--; 
 }
-
 
 
 int main(){
@@ -52,8 +47,9 @@ int main(){
   while(m--){
     int a, b;
     cin >> a >> b;
-    fa(index,v[a]-1,v[a]+1,a,b);
-    fb(index,v[b]-1,v[b]+1,a,b);
+    if(a > b) swap(a,b);
+    fa(index,v[a]-1,v[a]+1,a,b,n);
+    fb(index,v[b]-1,v[b]+1,a,b,n);
     swap(v[a],v[b]);
     swap(index[v[a]],index[v[b]]);
     cout << ans << endl;
@@ -61,3 +57,4 @@ int main(){
 
   return 0;
 }
+ 
