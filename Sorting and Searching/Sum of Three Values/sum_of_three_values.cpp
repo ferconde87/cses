@@ -2,6 +2,8 @@
 
 using namespace std;
 
+//note: if we use unordered_map instead of map, we get LTE over here :P
+
 int main(){
   int n, target;
   cin >> n >> target;
