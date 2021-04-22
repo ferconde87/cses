@@ -7,12 +7,14 @@ int main(){
   cin >> n;
   int a[n+1];
   int nl[n+1];
-  for(int i=0; i<n; ++i){
+  cout << 0 << " ";
+  cin >> a[0];
+  for(int i=2; i<=n; ++i){
     cin >> a[i];
-    nl[i]=i-1;
-    while(i != 0&&(a[nl[i]]>=a[i])){
+    nl[i]= i-1;
+    while(a[nl[i]]>=a[i]){
       nl[i] = nl[nl[i]];
     }
-    cout << nl[i]+1 << " ";
+    cout << nl[i] << " ";
   }
 }
