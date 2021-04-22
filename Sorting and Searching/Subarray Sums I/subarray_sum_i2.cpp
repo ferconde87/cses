@@ -15,8 +15,8 @@ int main(){
   for(int i=0; i<n; ++i){
     cin >> cur;
     sum+=cur;
-    ans+=m[sum-target];
-    m[sum]++;
+    ans+=m[target-sum];
+    m[-sum]++;
   }
   cout << ans;
 }

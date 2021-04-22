@@ -7,9 +7,10 @@ using namespace std;
 int main(){
   int n, target;
   cin >> n >> target;
-  map<ll, int> m;
+  unordered_map<ll, int> m;
+  m.reserve(1<<18);
   ll sum = 0;
-  ll ans = 0;
+  int ans = 0;
   ll cur;
   m[0]=1;
   for(int i=0; i<n; ++i){
