@@ -7,7 +7,6 @@ using namespace std;
 //this doesn't work with duplicates values
 //we would need an indexed_multiset
 
-
 #include <ext/pb_ds/assoc_container.hpp>
 using namespace __gnu_pbds;
 typedef tree<int,null_type,less<int>,rb_tree_tag,

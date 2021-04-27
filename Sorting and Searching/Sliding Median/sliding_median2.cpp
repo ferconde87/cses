@@ -59,7 +59,6 @@ int main(){
     return 0;
   }
 
-
   for(int i = 0; i < k-1; ++i) add({a[i],i});
 
   for(int i = k-1; i < n; ++i){
