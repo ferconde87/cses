@@ -4,7 +4,7 @@ using namespace std;
 
 #define ar array
 
-//greedy, it could be improved to the optimal solution if you try to put the same person to watch the movie
+//greedy, it could be improved to the optimal solution if you first try to put the same person to watch the movie
 //see movie_festival.cpp
 
 int main(){
