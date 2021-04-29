@@ -14,7 +14,6 @@ int movie_festival(vector<pair<int, int> > & v){
     }
   }
 
-
   return ans;
 }
 
