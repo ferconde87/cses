@@ -2,6 +2,8 @@
 
 using namespace std;
 
+//memory: O(target)
+
 #define ar array
 
 int main(){

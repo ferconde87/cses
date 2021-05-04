@@ -2,7 +2,7 @@
 
 using namespace std;
 
-//TLE 
+//TLE (see book_shop3.cpp for little improvement for this code that get accepted)
 //memory: O(target*N)
 
 int main(){
@@ -21,6 +21,8 @@ int main(){
         best[x][i] = max(best[x][i], best[x-prices[i]][i-1]+pages[i]);
     }
   }
+
+  for(int i=0; i <=target; ++i) cout << best[i][n] << " ";
 
   cout << best[target][n] << endl;
 }
