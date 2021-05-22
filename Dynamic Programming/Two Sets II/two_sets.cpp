@@ -24,5 +24,11 @@ int main() {
       }
     }
   }
+  for(int i=1; i<n; ++i){
+    for(int j=0; j<=target; ++j)
+      cout << dp[i][j] << " ";
+    cout << endl;
+  }
+  cout << endl;
   cout << dp[n-1][target] << endl;
 }
